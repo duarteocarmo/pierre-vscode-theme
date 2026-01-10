@@ -7,14 +7,14 @@ function M.get(c)
     DiagnosticError = { fg = c.states.danger },
     DiagnosticWarn = { fg = c.states.warn },
     DiagnosticInfo = { fg = c.states.info },
-    DiagnosticHint = { fg = c.fg.fg3 },
+    DiagnosticHint = { fg = c.fg.fg2 },
     DiagnosticOk = { fg = c.states.success },
 
-    DiagnosticVirtualTextError = { fg = c.states.danger },
-    DiagnosticVirtualTextWarn = { fg = c.states.warn },
-    DiagnosticVirtualTextInfo = { fg = c.states.info },
-    DiagnosticVirtualTextHint = { fg = c.fg.fg3 },
-    DiagnosticVirtualTextOk = { fg = c.states.success },
+    DiagnosticVirtualTextError = { fg = c.states.danger, italic = true },
+    DiagnosticVirtualTextWarn = { fg = c.states.warn, italic = true },
+    DiagnosticVirtualTextInfo = { fg = c.states.info, italic = true },
+    DiagnosticVirtualTextHint = { fg = c.fg.fg3, italic = true },
+    DiagnosticVirtualTextOk = { fg = c.states.success, italic = true },
 
     DiagnosticUnderlineError = { sp = c.states.danger, undercurl = true },
     DiagnosticUnderlineWarn = { sp = c.states.warn, undercurl = true },
@@ -50,7 +50,7 @@ function M.get(c)
     LspInfoBorder = { fg = c.border.editor },
 
     -- LSP Inlay Hints
-    LspInlayHint = { fg = c.fg.fg4, bg = c.bg.inset },
+    LspInlayHint = { fg = c.fg.fg4, italic = true },
 
     -- Semantic Tokens (matches VS Code semantic tokens)
     ["@lsp.type.comment"] = { fg = c.syntax.comment, italic = true },
@@ -64,15 +64,15 @@ function M.get(c)
     ["@lsp.type.function"] = { fg = c.syntax.func },
     ["@lsp.type.method"] = { fg = c.syntax.func },
     ["@lsp.type.type"] = { fg = c.syntax.type },
-    ["@lsp.type.class"] = { fg = c.syntax.type },
+    ["@lsp.type.class"] = { fg = c.syntax.type, bold = true },
     ["@lsp.type.namespace"] = { fg = c.syntax.namespace },
-    ["@lsp.type.enumMember"] = { fg = c.syntax.operator },
+    ["@lsp.type.enumMember"] = { fg = c.syntax.constant },
     ["@lsp.type.interface"] = { fg = c.syntax.type },
     ["@lsp.type.struct"] = { fg = c.syntax.type },
     ["@lsp.type.enum"] = { fg = c.syntax.type },
-    ["@lsp.type.typeParameter"] = { fg = c.syntax.type },
+    ["@lsp.type.typeParameter"] = { fg = c.syntax.type, italic = true },
     ["@lsp.type.decorator"] = { fg = c.syntax.decorator },
-    ["@lsp.type.macro"] = { fg = c.syntax.func },
+    ["@lsp.type.macro"] = { fg = c.syntax.decorator },
     ["@lsp.type.event"] = { fg = c.syntax.func },
     ["@lsp.type.modifier"] = { fg = c.syntax.keyword },
     ["@lsp.type.operator"] = { fg = c.syntax.operator },
@@ -90,14 +90,15 @@ function M.get(c)
     ["@lsp.mod.defaultLibrary"] = { fg = c.syntax.namespace },
 
     -- Combined type.modifier patterns
-    ["@lsp.typemod.variable.constant"] = { fg = c.syntax.constant },
+    ["@lsp.typemod.variable.constant"] = { fg = c.syntax.constant, bold = true },
     ["@lsp.typemod.variable.defaultLibrary"] = { fg = c.syntax.namespace },
     ["@lsp.typemod.function.defaultLibrary"] = { fg = c.syntax.func },
     ["@lsp.typemod.method.defaultLibrary"] = { fg = c.syntax.func },
-    ["@lsp.typemod.class.defaultLibrary"] = { fg = c.syntax.type },
+    ["@lsp.typemod.class.defaultLibrary"] = { fg = c.syntax.type, bold = true },
     ["@lsp.typemod.type.defaultLibrary"] = { fg = c.syntax.type },
-    ["@lsp.typemod.variable.readonly"] = { fg = c.syntax.constant },
-    ["@lsp.typemod.property.readonly"] = { fg = c.syntax.constant },
+    ["@lsp.typemod.variable.readonly"] = { fg = c.syntax.constant, bold = true },
+    ["@lsp.typemod.property.readonly"] = { fg = c.syntax.constant, bold = true },
+    ["@lsp.typemod.parameter.declaration"] = { fg = c.syntax.parameter, italic = true },
   }
 end
 
