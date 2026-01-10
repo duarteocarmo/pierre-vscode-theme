@@ -10,14 +10,14 @@ function M.get(c)
     ["@variable.member"] = { fg = c.syntax.variable },
 
     -- Constants
-    ["@constant"] = { fg = c.syntax.constant },
-    ["@constant.builtin"] = { fg = c.syntax.number },
-    ["@constant.macro"] = { fg = c.syntax.constant },
+    ["@constant"] = { fg = c.syntax.constant, bold = true },
+    ["@constant.builtin"] = { fg = c.syntax.number, bold = true },
+    ["@constant.macro"] = { fg = c.syntax.constant, bold = true },
 
     -- Modules/Namespaces
     ["@module"] = { fg = c.syntax.namespace },
     ["@module.builtin"] = { fg = c.syntax.namespace },
-    ["@label"] = { fg = c.syntax.tag },
+    ["@label"] = { fg = c.syntax.tag, bold = true },
 
     -- Strings
     ["@string"] = { fg = c.syntax.string },
@@ -38,12 +38,12 @@ function M.get(c)
     ["@number.float"] = { fg = c.syntax.number },
 
     -- Booleans
-    ["@boolean"] = { fg = c.syntax.number },
+    ["@boolean"] = { fg = c.syntax.number, bold = true },
 
     -- Types
     ["@type"] = { fg = c.syntax.type },
     ["@type.builtin"] = { fg = c.syntax.type },
-    ["@type.definition"] = { fg = c.syntax.type },
+    ["@type.definition"] = { fg = c.syntax.type, bold = true },
     ["@type.qualifier"] = { fg = c.syntax.keyword },
 
     -- Attributes/Decorators
@@ -60,7 +60,7 @@ function M.get(c)
     ["@function.method.call"] = { fg = c.syntax.func },
 
     -- Constructors
-    ["@constructor"] = { fg = c.syntax.type },
+    ["@constructor"] = { fg = c.syntax.type, bold = true },
 
     -- Operators
     ["@operator"] = { fg = c.syntax.operator },
@@ -75,12 +75,12 @@ function M.get(c)
     ["@keyword.modifier"] = { fg = c.syntax.keyword },
     ["@keyword.repeat"] = { fg = c.syntax.keyword },
     ["@keyword.return"] = { fg = c.syntax.keyword },
-    ["@keyword.debug"] = { fg = c.syntax.keyword },
+    ["@keyword.debug"] = { fg = c.states.warn },
     ["@keyword.exception"] = { fg = c.syntax.keyword },
     ["@keyword.conditional"] = { fg = c.syntax.keyword },
     ["@keyword.conditional.ternary"] = { fg = c.syntax.keyword },
-    ["@keyword.directive"] = { fg = c.syntax.keyword },
-    ["@keyword.directive.define"] = { fg = c.syntax.keyword },
+    ["@keyword.directive"] = { fg = c.syntax.decorator },
+    ["@keyword.directive.define"] = { fg = c.syntax.decorator },
 
     -- Punctuation
     ["@punctuation.bracket"] = { fg = c.syntax.punctuation },
